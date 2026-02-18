@@ -4,45 +4,87 @@
     <title>Muskan Arora | Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #ffffff;
-            color: #1f2937;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
 
         header {
-            background: #2563eb;
-            color: white;
+            padding: 100px 20px;
             text-align: center;
-            padding: 70px 20px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 15px;
+            font-weight: 300;
         }
 
         section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
 
         h2 {
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #7dd3fc;
         }
 
         .card {
-            background: #f9fafb;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background: #7c3aed;
+            color: white;
             border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #9333ea;
         }
 
         footer {
-            background: #2563eb;
-            color: white;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        .highlight {
+            color: #38bdf8;
         }
     </style>
 </head>
@@ -51,7 +93,8 @@
 
 <header>
     <h1>Muskan Arora</h1>
-    <p>Strategic Account Specialist | Anaplan | Enterprise Solutions</p>
+    <p>Strategic Account Specialist • <span class="highlight">Anaplan</span> • Enterprise Solutions</p>
+    <a class="button" href="mailto:your@email.com">Contact Me</a>
 </header>
 
 <section>
@@ -59,21 +102,29 @@
     <div class="card">
         Experienced in enterprise Anaplan environments, CloudWorks integrations,
         OAuth configuration, and resolving complex client-facing technical issues.
+        Passionate about optimizing planning systems and delivering scalable solutions.
     </div>
 </section>
 
 <section>
     <h2>Experience</h2>
     <div class="card">
-        <strong>Anaplan – Strategic Account Support</strong><br>
-        Provided L2/L3 enterprise support and managed integration workflows.
+        <strong>Anaplan – Strategic Account Support</strong><br><br>
+        • Provided L2/L3 enterprise support for global clients<br>
+        • Managed CloudWorks integrations and OAuth authentication<br>
+        • Troubleshot API failures and performance issues<br>
+        • Improved workflow reliability and reduced integration errors
     </div>
 </section>
 
 <section>
-    <h2>Contact</h2>
+    <h2>Core Expertise</h2>
     <div class="card">
-        Email: your@email.com
+        Enterprise Model Support<br>
+        CloudWorks Integration<br>
+        OAuth & API Troubleshooting<br>
+        Enterprise Client Communication<br>
+        Financial Planning Systems
     </div>
 </section>
 
