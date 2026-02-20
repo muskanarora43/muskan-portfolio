@@ -62,18 +62,29 @@ html {
         }
 
         h1 {
-            font-size: 56px;
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: #ffffff;
-    text-shadow:
-        0 0 10px rgba(79,156,249,0.6),
-        0 0 20px rgba(79,156,249,0.4),
-        0 0 40px rgba(79,156,249,0.2);
+           font-size: 56px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #4f9cf9,
+        #ffffff
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowMove 4s linear infinite;
         }
-
-        .subtitle {
+@keyframes glowMove {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}        .subtitle {
             margin-top: 20px;
             font-size: 20px;
             color: #9aa4b2;
