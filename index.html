@@ -50,7 +50,14 @@ html {
             background: #0b0f19;
             color: #e6edf3;
         }
-
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
         .container {
             max-width: 1100px;
             margin: auto;
@@ -203,7 +210,7 @@ html {
 </head>
 
 <body>
-
+<canvas id="bgCanvas"></canvas>
 <div class="container">
 <div class="nav-panel">
     <a href="#about">About</a>
@@ -377,6 +384,63 @@ html {
     reveals.forEach(reveal => {
         observer.observe(reveal);
     });
-</script>            
+</script> 
+        const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speedY = Math.random() * 0.3 + 0.1;
+    }
+
+    update() {
+        this.y -= this.speedY;
+        if (this.y < 0) {
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+        }
+    }
+
+    draw() {
+        ctx.fillStyle = "rgba(79,156,249,0.15)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function initParticles() {
+    particlesArray = [];
+    for (let i = 0; i < 80; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+    requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles();
+});
+        </script>
 </body>
 </html>
