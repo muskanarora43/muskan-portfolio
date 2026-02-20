@@ -15,31 +15,33 @@ html {
      
 .nav-panel {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 40px;
+    right: 40px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
+    gap: 12px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.nav-panel button {
-    background: transparent;
-    border: 1px solid #4f9cf9;
-    color: #4f9cf9;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s ease;
+.nav-panel a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.nav-panel button:hover {
-    background: #4f9cf9;
-    color: #0b0f19;
+.nav-panel a:hover {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
     
         body {
@@ -64,6 +66,11 @@ html {
             margin: 0;
             font-weight: 700;
             letter-spacing: -1px;
+            color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(79,156,249,0.6),
+        0 0 20px rgba(79,156,249,0.4),
+        0 0 40px rgba(79,156,249,0.2);
         }
 
         .subtitle {
