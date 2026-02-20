@@ -122,25 +122,19 @@
         .button:hover {
             background: #3b82f6;
         }
-/* Fade-in Animation */
-.fade-in {
+/* Scroll Animation Setup */
+
+.reveal {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease forwards;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
 }
 
-.fade-delay-1 { animation-delay: 0.2s; }
-.fade-delay-2 { animation-delay: 0.4s; }
-.fade-delay-3 { animation-delay: 0.6s; }
-.fade-delay-4 { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
-        
+     
         footer {
             margin-top: 120px;
             padding-top: 40px;
@@ -161,7 +155,7 @@
 
 <div class="container">
 
-<header class="fade-in">
+<header class="reveal">
     <h1>Muskan Arora</h1>
     <div class="subtitle">
         Strategic Account Specialist • 
@@ -175,7 +169,7 @@
 
 </header>
 
-<div class="section fade-in fade-delay-1">
+<div class="section reveal">
     <h2>About</h2>
     <div class="card">
         A highly effective Data & Support Analyst with a proven record of enhancing customer outcomes in complex SaaS environments. 
@@ -184,7 +178,7 @@
     </div>
 </div>
 
-<div class="section fade-in fade-delay-2">
+<div class="section reveal">
     <h2>Experience</h2>
 
     <div class="card">
@@ -239,7 +233,7 @@
         </ul>
     </div>
 
-    <div class="section fade-in fade-delay-3">
+    <div class="section reveal">
     <h2>Selected Projects</h2>
 
     <div class="card">
@@ -263,7 +257,7 @@
             <li>Tested API integration workflows using Postman to validate authentication and endpoint behavior</li>
 
     
-<div class="section fade-in fade-delay-4">
+<div class="section reveal">
     <h2>Technical Strengths</h2>
     <div class="card">
          <strong>Technical Tools</strong><br><br>
@@ -281,7 +275,7 @@
         <strong>Business & Consulting Skills</strong><br><br>
         Requirements Gathering • Stakeholder Management • Reporting • Documentation • Root Cause Analysis
     </div>
-<div class="section fade-in fade-delay-5">
+<div class="section reveal">
     <h2>Education</h2>
 
     <div class="card">
@@ -308,5 +302,22 @@
 
 </div>
 
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    reveals.forEach(reveal => {
+        observer.observe(reveal);
+    });
+</script>            
 </body>
 </html>
