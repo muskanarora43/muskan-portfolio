@@ -9,6 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+.nav-panel {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-panel button {
+    background: transparent;
+    border: 1px solid #4f9cf9;
+    color: #4f9cf9;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-panel button:hover {
+    background: #4f9cf9;
+    color: #0b0f19;
+}
+    
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
@@ -89,7 +118,6 @@
             margin-bottom: 8px;
         }
 
-        .button
         .social-buttons {
     margin-top: 30px;
 }
@@ -149,11 +177,20 @@
             }
         }
     </style>
+    
 </head>
 
 <body>
 
 <div class="container">
+<div class="nav-panel">
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('experience')">Experience</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('education')">Education</button>
+</div>
+    
 
 <header class="reveal">
     <h1>Muskan Arora</h1>
