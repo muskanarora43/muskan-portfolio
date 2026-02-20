@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+html {
+    scroll-behavior: smooth;
+}
+     
 .nav-panel {
     position: fixed;
     top: 30px;
@@ -184,11 +188,11 @@
 
 <div class="container">
 <div class="nav-panel">
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('experience')">Experience</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('education')">Education</button>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
 </div>
     
 
@@ -206,7 +210,7 @@
 
 </header>
 
-<div class="section reveal">
+<div id="about" class="section reveal">
     <h2>About</h2>
     <div class="card">
         A highly effective Data & Support Analyst with a proven record of enhancing customer outcomes in complex SaaS environments. 
@@ -215,7 +219,7 @@
     </div>
 </div>
 
-<div class="section reveal">
+<div id="experience" class="section reveal">
     <h2>Experience</h2>
 
     <div class="card">
@@ -270,7 +274,7 @@
         </ul>
     </div>
 
-    <div class="section reveal">
+    <div id="projects" class="section reveal">
     <h2>Selected Projects</h2>
 
     <div class="card">
@@ -294,7 +298,7 @@
             <li>Tested API integration workflows using Postman to validate authentication and endpoint behavior</li>
 
     
-<div class="section reveal">
+<div id="skills" class="section reveal">
     <h2>Technical Strengths</h2>
     <div class="card">
          <strong>Technical Tools</strong><br><br>
@@ -312,7 +316,7 @@
         <strong>Business & Consulting Skills</strong><br><br>
         Requirements Gathering • Stakeholder Management • Reporting • Documentation • Root Cause Analysis
     </div>
-<div class="section reveal">
+<div id="education" class="section reveal">
     <h2>Education</h2>
 
     <div class="card">
