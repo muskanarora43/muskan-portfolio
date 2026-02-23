@@ -10,99 +10,38 @@
 
     <style>
 
-        header {
-    position: relative;
-    z-index: 5;
-    background: rgba(255,0,0,0.2);
-}
-html {
-    scroll-behavior: smooth;
-}
-     
-.nav-panel {
-    position: fixed;
-    top: 40px;
-    right: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
-.nav-panel a {
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    padding: 10px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.nav-panel a:hover {
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-    
-        body {
+           body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #0b0f19;
-            color: #e6edf3;
-    
-        }
-        .container {
-            position: relative;
-            z-index: 1;
+            background: #0f172a;
+            color: #e2e8f0; 
         }
 
-        header {
-            margin-bottom: 120px;
+  header {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+        
+       header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
         }
 
-        h1 {
-           font-size: 56px;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -1px;
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #4f9cf9,
-        #ffffff
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glowMove 4s linear infinite;
-        }
-@keyframes glowMove {
-    0% {
-        background-position: 0% center;
-    }
-    100% {
-        background-position: 200% center;
-    }
-}        .subtitle {
-            margin-top: 20px;
+        header p {
             font-size: 20px;
-            color: #9aa4b2;
+            margin-top: 15px;
+            font-weight: 300;
         }
 
-        .highlight {
-            color: #4f9cf9;
+        section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
 
-        .section {
-            margin-bottom: 100px;
-        }
-
+    
         h2 {
             font-size: 18px;
             text-transform: uppercase;
@@ -145,41 +84,22 @@ html {
             margin-bottom: 8px;
         }
 
-        .social-buttons {
-    margin-top: 30px;
-}
-
-.social-buttons a {
-   display: inline-block;
-    margin-right: 15px;
-    padding: 12px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #e6edf3;
-
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    transition: all 0.3s ease;
-}
-
-.social-buttons a:hover {
-    border-color: #4f9cf9;
-    box-shadow: 0 0 20px rgba(79, 156, 249, 0.5);
-    transform: translateY(-2px);
-}
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #4f9cf9;
+            color: #0b0f19;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
 
         .button:hover {
             background: #3b82f6;
         }
 
-
-     
         footer {
             margin-top: 120px;
             padding-top: 40px;
@@ -198,40 +118,27 @@ html {
 </head>
 
 <body>
-<div class="container">
-<div class="nav-panel">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-</div>
     
-
-<header class="reveal">
+<header>
     <h1>Muskan Arora</h1>
     <div class="subtitle">
         Strategic Account Specialist • 
         <span class="highlight">Anaplan</span> • Enterprise Integrations
     </div>
-    <div class="social-buttons">
-    <a href="mailto:your@email.com">marora98@outlook.com</a>
-    <a href="https://www.linkedin.com/in/muskan-arora1/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/muskanarora43/" target="_blank">GitHub</a>
-</div>
-
+    <a class="button" href="mailto:your@email.com">Get In Touch</a>
 </header>
 
-<div id="about" class="section reveal">
+<section>
     <h2>About</h2>
     <div class="card">
         A highly effective Data & Support Analyst with a proven record of enhancing customer outcomes in complex SaaS environments. 
         Adept at leveraging SQL, Power BI, and API integrations to automate processes, troubleshoot technical issues, and deliver actionable insights. 
         Excels in rapid-cycle troubleshooting and root cause analysis, consistently maintaining a 95%+ customer satisfaction rating.
     </div>
-</div>
+    </div>
+</sectio>
 
-<div id="experience" class="section reveal">
+    <div class="section">
     <h2>Experience</h2>
 
     <div class="card">
@@ -284,8 +191,10 @@ html {
             <li>Strengthened team-wide understanding of business metrics through data storytelling and training on analytical tools.</li>
             <li>Optimized scheduling and forecasting models to align staffing with peak demand, reducing inefficiencies and boosting productivity.</li>
         </ul>
-    </div>
-
+  </div>
+        
+</div>
+    
     <div id="projects" class="section reveal">
     <h2>Selected Projects</h2>
 
@@ -310,6 +219,7 @@ html {
             <li>Tested API integration workflows using Postman to validate authentication and endpoint behavior</li>
 
     </div>
+</div>
     
 <div id="skills" class="section reveal">
     <h2>Technical Strengths</h2>
@@ -317,10 +227,12 @@ html {
          <strong>Technical Tools</strong><br><br>
         SQL • Excel (Pivot Tables, Power Query) • Power BI • Tableau • Grafana • Splunk Cloud
     </div>
+    
 <div class="card">
         <strong>SaaS & Integrations</strong><br><br>
         Anaplan • Anaplan Connect • Postman • API Troubleshooting • OAuth • REST APIs
     </div>
+    
     <div class="card">
         <strong>Support Platforms</strong><br><br>
         ServiceNow • Salesforce • JIRA • Confluence
@@ -329,6 +241,8 @@ html {
         <strong>Business & Consulting Skills</strong><br><br>
         Requirements Gathering • Stakeholder Management • Reporting • Documentation • Root Cause Analysis
     </div>
+</div>
+    
 <div id="education" class="section reveal">
     <h2>Education</h2>
 
@@ -355,9 +269,6 @@ html {
 </footer>
 
 </div>
-
-<script>
-</script>
         
 </body>
 </html>
