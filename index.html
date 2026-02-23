@@ -10,6 +10,57 @@
 
     <style>
 
+        html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f19;
+    color: #e6edf3;
+}
+        /* ============================= */
+/* Container Layout */
+/* ============================= */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* ============================= */
+/* Header Styling */
+/* ============================= */
+
+header {
+    margin-bottom: 120px;
+}
+
+h1 {
+    font-size: 56px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #9aa4b2;
+}
+
+.highlight {
+    color: #4f9cf9;
+}
+
+/* ============================= */
+/* Nav Panel (Glass) */
+/* ============================= */
+
+
         .nav-panel {
     position: fixed;
     top: 30px;
@@ -38,96 +89,63 @@
     background: #4f9cf9;
     color: #0b0f19;
 }
+/* ============================= */
+/* Sections */
+/* ============================= */
 
-           body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #0f172a;
-            color: #e2e8f0; 
-        }
+.section {
+    margin-bottom: 100px;
+}
 
-  header {
-            padding: 100px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-        }
-        
-       header h1 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: 700;
-        }
+h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4f9cf9;
+    margin-bottom: 30px;
+}
 
-        header p {
-            font-size: 20px;
-            margin-top: 15px;
-            font-weight: 300;
-        }
-
-        section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-    
-        h2 {
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #4f9cf9;
-            margin-bottom: 30px;
-        }
+/* ============================= */
+/* Cards */
+/* ============================= */
 
         .card {
-            background: #111827;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 1px solid #1f2937;
-            transition: all 0.3s ease;
-        }
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #1f2937;
+    transition: all 0.3s ease;
+}
 
-        .card:hover {
-            border-color: #4f9cf9;
-            transform: translateY(-4px);
-        }
+.card:hover {
+    border-color: #4f9cf9;
+    transform: translateY(-4px);
+}
 
-        .role {
-            font-size: 18px;
-            font-weight: 600;
-        }
+.role {
+    font-size: 18px;
+    font-weight: 600;
+}
 
-        .company {
-            color: #4f9cf9;
-            margin-bottom: 10px;
-        }
+.company {
+    color: #4f9cf9;
+    margin-bottom: 10px;
+}
 
-        ul {
-            margin-top: 15px;
-            padding-left: 20px;
-            color: #cbd5e1;
-        }
+ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #cbd5e1;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+li {
+    margin-bottom: 8px;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background: #4f9cf9;
-            color: #0b0f19;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #3b82f6;
-        }
+/* ============================= */
+/* Glass Social Buttons */
+/* ============================= */
 
         .social-buttons {
     margin-top: 30px;
@@ -354,18 +372,21 @@
 </div>
 
 <script>
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(section => {
-        section.style.display = 'none';
-    });
+const reveals = document.querySelectorAll(".reveal");
 
-    document.getElementById(id).style.display = 'block';
+function revealOnScroll() {
+    reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            element.classList.add("active");
+        }
+    });
 }
 
-// Show About by default
-document.addEventListener("DOMContentLoaded", function() {
-    showSection('about');
-});
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 </script>
         
 </body>
