@@ -48,7 +48,8 @@ html {
             margin: 0;
             font-family: 'Inter', sans-serif;
             background: #0b0f19;
-            color: #e6edf3;
+            color: #e6edf3
+            z-index: 1;
         }
 #bgCanvas {
     position: fixed;
@@ -56,9 +57,11 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
 }
         .container {
+            position: relative;
+            z-index: 2;
             max-width: 1100px;
             margin: auto;
             padding: 80px 20px;
