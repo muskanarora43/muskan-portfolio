@@ -40,14 +40,22 @@ header {
 
 h1 {
     font-size: 56px;
-    margin: 0;
     font-weight: 700;
-    letter-spacing: -1px;
-    color: #ffffff;
-    text-shadow:
-        0 0 10px rgba(79,156,249,0.6),
-        0 0 20px rgba(79,156,249,0.4),
-        0 0 40px rgba(79,156,249,0.2);
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #4f9cf9,
+        #ffffff
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowMove 5s linear infinite;
+}
+
+@keyframes glowMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 .subtitle {
@@ -129,7 +137,8 @@ h2 {
 
 .card:hover {
     border-color: #4f9cf9;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(79,156,249,0.25);
 }
 
 .role {
@@ -221,12 +230,24 @@ li {
     z-index: -1;        /* stays behind content */
     pointer-events: none; /* does not block clicks */
 }
+#scrollBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #4f9cf9;
+    z-index: 9999;
+}
+        
     </style>
     
 </head>
 
 <body>
 <canvas id="bgCanvas"></canvas>
+    <div id="scrollBar"></div>
+    
     
    <div class="nav-panel">
     <a href="#about">About</a>
@@ -474,6 +495,14 @@ function animate() {
 
 init();
 animate();
+
+    window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById("scrollBar").style.width = progress + "%";
+});
+    
 </script>
         
 </body>
