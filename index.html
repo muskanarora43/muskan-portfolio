@@ -39,23 +39,37 @@ header {
 }
 
 h1 {
-    font-size: 56px;
-    font-weight: 700;
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+
     background: linear-gradient(
         90deg,
         #ffffff,
         #4f9cf9,
+        #7dd3fc,
+        #4f9cf9,
         #ffffff
     );
-    background-size: 200% auto;
+
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: glowMove 5s linear infinite;
+
+    animation: gradientMove 6s linear infinite,
+               floatName 4s ease-in-out infinite;
+
+    text-shadow: 0 0 20px rgba(79,156,249,0.4);
+}
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
 }
 
-@keyframes glowMove {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
+@keyframes floatName {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
 }
 
 .subtitle {
