@@ -71,6 +71,16 @@ h1 {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-6px); }
 }
+        .section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
 
 .subtitle {
     margin-top: 20px;
@@ -80,10 +90,6 @@ h1 {
 
 .highlight {
     color: #4f9cf9;
-}
-.magnetic {
-    transition: transform 0.2s ease;
-    display: inline-block;
 }
         
 /* ============================= */
@@ -268,7 +274,7 @@ li {
     
     
    <div class="nav-panel">
-    <a href="#about" class="magnetic">About</a>
+    <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -284,9 +290,9 @@ li {
         <span class="highlight">Anaplan</span> • Enterprise Integrations
     </div>
    <div class="social-buttons">
-    <a href="mailto:your@email.com" class="magnetic">Email</a>
-    <a href="https://www.linkedin.com/in/muskan-arora1/" target="_blank" class="magnetic">LinkedIn</a>
-    <a href="https://github.com/muskanarora43/" target="_blank" class="magnetic">GitHub</a>
+    <a href="mailto:your@email.com">Email</a>
+    <a href="https://www.linkedin.com/in/muskan-arora1/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/muskanarora43/" target="_blank">GitHub</a>
 </div>
 </header>
 
@@ -520,33 +526,26 @@ animate();
     const progress = (scrollTop / scrollHeight) * 100;
     document.getElementById("scrollBar").style.width = progress + "%";
 });
+document.addEventListener("DOMContentLoaded", function () {
 
-    const magneticElements = document.querySelectorAll(".magnetic");
+    const sections = document.querySelectorAll(".section");
 
-magneticElements.forEach(el => {
-
-    el.addEventListener("mousemove", (e) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const moveX = (x - centerX) * 0.2;
-        const moveY = (y - centerY) * 0.2;
-        
-
-        el.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        el.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
-        el.style.transform = "translate(0px, 0px) scale(1)";
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, {
+        threshold: 0.15
     });
 
-    el.addEventListener("mouseleave", () => {
-        el.style.transform = "translate(0px, 0px)";
+    sections.forEach(section => {
+        observer.observe(section);
     });
 
 });
+   
     
 </script>
         
